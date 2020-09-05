@@ -7,7 +7,12 @@ require 'sinatra/activerecord'
 set :database, {adapter: "sqlite3", database: "barbershop.db"}
 
 class Client < ActiveRecord::Base
-
+  # Делаем валидацию через ActiveRecord для visit.erb
+  # presence - присутствие. Отвечает как не странно за то, что присутствует ли там что-то
+  validates :name, presence: true
+  validates :phone, presence: true
+  validates :datestamp, presence: true
+  validates :color, presence: true
 end
 
 class Barber < ActiveRecord::Base

@@ -9,7 +9,7 @@ set :database, {adapter: "sqlite3", database: "barbershop.db"}
 class Client < ActiveRecord::Base
   # Делаем валидацию через ActiveRecord для visit.erb
   # presence - присутствие. Отвечает как не странно за то, что присутствует ли там что-то
-  validates :name, presence: true
+  validates :name, presence: true, length: { minimum: 3, maximum: 10 }
   validates :phone, presence: true
   validates :datestamp, presence: true
   validates :color, presence: true

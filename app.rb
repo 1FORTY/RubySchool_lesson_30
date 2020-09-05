@@ -43,3 +43,8 @@ post '/visit' do
     erb :visit
   end
 end
+
+get '/barber/:id' do
+  id = params[:id]
+  erb :barber
+end

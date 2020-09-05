@@ -11,7 +11,7 @@
 
     <% @barbers.each do |barber| %>
       <p>
-        <%= barber.id %>. <%= barber.name %>
+        <a href="/barber/<%= barber.id %>"><%= barber.id %>. <%= barber.name %></a>
       </p>
     <% end %>
 

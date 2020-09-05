@@ -60,6 +60,7 @@ end
 
 get '/client/:id' do
   id = params[:id]
+  @client = Client.find(params[:id])
 
-  erb "<h2>It\'s page client number: #{id}</h2>"
+  erb :client
 end

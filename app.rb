@@ -51,3 +51,15 @@ get '/barber/:id' do
 
   erb :barber
 end
+
+get '/bookings' do
+  @clients = Client.order('created_at DESC')
+
+  erb :bookings
+end
+
+get '/client/:id' do
+  id = params[:id]
+
+  erb "<h2>It\'s page client number: #{id}</h2>"
+end
